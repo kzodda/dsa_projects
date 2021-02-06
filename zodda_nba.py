@@ -191,11 +191,11 @@ ucla_era_firstround_champions.head(7)
 
 
 def overall_converter(subset):
-      subnum = ''
-       for n in subset:
-            if n in '1234567890':
-                subnum += n
-        return int(subnum)
+    subnum = ''
+    for n in subset:
+          if n in '1234567890':
+            subnum += n
+    return int(subnum)
 
 
 ucla_era_firstround_champions['overall_pick'] = ucla_era_firstround_champions.draft_pick.apply(overall_converter)
@@ -233,8 +233,8 @@ is the height of the John Wooden Era (1964-1975)
 ## We want it to be an integer so we don't use one_hot encoding/ binning. 
 def height_converter (subset):
     return (int(subset[0])* 12) + int(subset[2])
-ucla_era_formodel['height_inches'] = ucla_era_formodel.height.apply(height_converter)
-ucla_era_formodel.drop(['height'], axis = 1, inplace = True)
+    
+ucla_era_formodel['height_inches'] = ucla_era_formodel.height.apply(height_converter)ucla_era_formodel.drop(['height'], axis = 1, inplace = True)
 
 ucla_era_formodel.head()
 
